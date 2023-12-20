@@ -1,53 +1,41 @@
-import React from "react";
-import PokemonCard from "./components/PokemonCard";
-import "./App.css";
-import "./styles.css";
+import ListItem from "./components/ListItem";
+
+const vegetables = [
+  { id: "abc1", name: "broccoli", color: "green" },
+  { id: "abc2", name: "carrot", color: "orange" },
+  { id: "abc3", name: "spinach", color: "dark green" },
+  { id: "abc4", name: "tomato", color: "red" },
+  { id: "abc5", name: "cucumber", color: "light green" },
+];
 
 export default function App() {
-  const pokemons = [
-    {
-      id: "448",
-      name: "Lucario",
-      types: "fighting, steel",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/448.svg",
-    },
-    {
-      id: "249",
-      name: "Lugia",
-      types: "psychic, flying",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/249.svg",
-    },
-    {
-      id: "197",
-      name: "Umbreon",
-      types: "dark",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/197.svg",
-    },
-    {
-      id: "445",
-      name: "Garchomp",
-      types: "dragon",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/445.svg",
-    },
-  ];
-
   return (
-    <main className="app">
-      <h1 className="app__title">Pokédex</h1>
-      <ul className="app__pokemons">
-        <li>
-          <PokemonCard
-            id="448"
-            name="Lucario"
-            types="fighting, steel"
-            image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/448.svg"
-          />
-        </li>
+    <>
+      <h1>React Arrays</h1>
+      <h2>Explicit return</h2>
+      <ul>
+        {vegetables.map((vegetable) => {
+          console.log(vegetable);
+          return <ListItem key={vegetable.id} vegetable={vegetable} />;
+        })}
       </ul>
-    </main>
+      <h2>Implicit return</h2>
+      <ul>
+        {vegetables.map((vegetable) => (
+          <ListItem key={vegetable.id} vegetable={vegetable} />
+        ))}
+      </ul>
+    </>
   );
 }
+
+/*
+
+<IrgendEineComponent banane="gelb" numberA={2} functionX={() => {}}/>
+
+const props = {banane: "gelb", numberA: 2, functionX: () => {}}
+
+function IrgendEineComponent({banane, numberA, functionX}) {
+  return irgend ein JSX
+}
+*/
