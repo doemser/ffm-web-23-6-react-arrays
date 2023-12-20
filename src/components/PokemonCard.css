@@ -1,0 +1,28 @@
+.pokemon-card {
+  background: var(--color-bright);
+  margin: 0 0 1rem 0;
+  padding: 1rem 0 0 0;
+}
+
+.pokemon-card__image {
+  display: block;
+  width: 60%;
+  margin: 0 auto 1rem auto;
+}
+
+.pokemon-card__content {
+  background-color: var(--color-dark);
+  color: var(--color-bright);
+  padding: 1rem;
+  position: relative;
+}
+
+.pokemon-card__id {
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+}
+
+.pokemon-card__name {
+  margin: 0 0 1rem 0;
+}
